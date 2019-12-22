@@ -21,9 +21,8 @@ config/icon="res://icon.png"
 [autoload]
 
 UTILS="*res://domain/UTILS.gd"
-LEVELS="*res://domain/LEVELS.gd"
+SCENES="*res://domain/SCENES.gd"
 STORE="*res://domain/STORE.gd"
-MENU="*res://gui/menu/menu.tscn"
 
 [rendering]
 

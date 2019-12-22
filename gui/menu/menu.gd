@@ -7,7 +7,7 @@ onready var BUTTONS = {
 
 func _on_Button_pressed():
 	if(BUTTONS.START.pressed):
-		UTILS.goto_scene(LEVELS.LEVEL_1.FILE)
+		UTILS.goto_scene(SCENES.LEVEL_1.FILE)
 		return
 	if(BUTTONS.END.pressed):
 		get_tree().quit()

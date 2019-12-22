@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://domain/STORE.gd" type="Script" id=1]
 [ext_resource path="res://domain/UTILS.gd" type="Script" id=2]
-[ext_resource path="res://domain/LEVELS.gd" type="Script" id=3]
-[ext_resource path="res://gui/menu/menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://domain/SCENES.gd" type="Script" id=3]
+[ext_resource path="res://sounds/bg.wav" type="AudioStream" id=4]
+[ext_resource path="res://gui/menu/menu.tscn" type="PackedScene" id=5]
 
 [node name="Root" type="Node"]
 
@@ -13,7 +14,11 @@ script = ExtResource( 1 )
 [node name="UTILS" type="Node" parent="."]
 script = ExtResource( 2 )
 
-[node name="LEVELS" type="Node" parent="."]
+[node name="SCENES" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="Menu" parent="." instance=ExtResource( 4 )]
+[node name="player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Menu" parent="." instance=ExtResource( 5 )]

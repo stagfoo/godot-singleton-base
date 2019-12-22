@@ -1,6 +1,9 @@
 extends Node
 
+var MAIN_MENU = {
+	"FILE": "res://gui/menu/menu.tscn"
+}
+
 var LEVEL_1 = {
-	"SCENE": preload("res://levels/level1.tscn"),
 	"FILE": "res://levels/level1.tscn",
 }
