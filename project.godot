@@ -20,7 +20,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GLOBALS="*res://scripts/GLOBALS.gd"
+UTILS="*res://domain/UTILS.gd"
+LEVELS="*res://domain/LEVELS.gd"
+STORE="*res://domain/STORE.gd"
+MENU="*res://gui/menu/menu.tscn"
 
 [rendering]
 

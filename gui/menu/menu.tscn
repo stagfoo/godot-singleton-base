@@ -1,14 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://gui/menu/menu.gd" type="Script" id=1]
+[ext_resource path="res://sounds/bg.wav" type="AudioStream" id=1]
+[ext_resource path="res://gui/menu/menu.gd" type="Script" id=2]
 
 [node name="Menu" type="Node2D"]
 
+[node name="bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
 [node name="ItemList" type="ItemList" parent="."]
+editor/display_folded = true
 margin_left = 1.0
 margin_right = 1022.0
 margin_bottom = 604.0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Start Game" type="Button" parent="ItemList"]
 margin_left = 607.929

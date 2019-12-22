@@ -1,18 +1,15 @@
 extends ItemList
 
-onready var START_BUTTON = get_node("Start Game")
-onready var END_BUTTON =  get_node("End Game")
+onready var BUTTONS = {
+	"START": get_node('Start Game'),
+	"END": get_node('End Game'),
+}
 
-func _ready():
-	pass
-
-func _process(delta):
-	pass
 func _on_Button_pressed():
-	if(START_BUTTON.pressed):
-		GLOBALS.goto_scene("res://levels/level1.tscn")
+	if(BUTTONS.START.pressed):
+		UTILS.goto_scene(LEVELS.LEVEL_1.FILE)
 		return
-	if(END_BUTTON.pressed):
+	if(BUTTONS.END.pressed):
 		get_tree().quit()
 		return
 	pass
