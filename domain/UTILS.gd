@@ -7,13 +7,15 @@ func _ready():
 	STORE.CURRENT_SCENE = get_parent().get_node("Menu")
 	
 func _process(delta):
-	if Input.is_action_pressed("ui_cancel"):
-		UTILS.goto_scene(SCENES.MAIN_MENU.FILE)
+	if Input.is_action_pressed("ui_cancel"):	
+		back_to_menu()
 	
 func goto_scene(path):
 	_deferred_goto_scene(path)
 	
 
+func back_to_menu():
+	UTILS.goto_scene(SCENES.MAIN_MENU.FILE)
 
 func _deferred_goto_scene(path):
 	STORE.CURRENT_SCENE.free()
