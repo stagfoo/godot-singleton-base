@@ -15,7 +15,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="New Game Project"
+config/name="Base"
+run/main_scene="res://Root.tscn"
+boot_splash/image="res://splash.png"
+boot_splash/bg_color=Color( 0.996078, 0.862745, 0.717647, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -23,6 +26,18 @@ config/icon="res://icon.png"
 UTILS="*res://domain/UTILS.gd"
 SCENES="*res://domain/SCENES.gd"
 STORE="*res://domain/STORE.gd"
+
+[display]
+
+window/size/width=375
+window/size/height=667
+window/per_pixel_transparency/allowed=true
+window/per_pixel_transparency/splash=true
+window/handheld/orientation="portrait"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
