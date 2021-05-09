@@ -7,26 +7,30 @@ var facing_direction = Vector3(0,0,0)
 var velocity = Vector3()
 var gravity = -35
 var camera
-var character
-var ground
-var traction
-var SPEED = 14
-var ACCELERATION = 20
-const DECELERATION = 10
-var JUMP_HEIGHT = 15
+onready var player = get_node('.')
+onready var player_animation = get_node("character/player-mesh/AnimationPlayer")
+onready var effects_sound = {
+	"run": get_node("character/run"),
+	"jump": get_node("character/jump"),
+	"death": get_node("character/death"),
+	"attack": get_node("character/attack")
+}
+onready var effect_run = get_node("character/effect-run")
+onready var traction = get_node("Traction")
+export var SPEED = 14
+export var ACCELERATION = 20
+export var DECELERATION = 10
+export var JUMP_HEIGHT = 15
 var lifecycle = 0
-var is_moving = false
-var can_jump = false
+export var is_moving = false
+export var is_attacking = false
+export var can_jump = false
 
 var animationPlayer
 
 
 func _ready():
-	character = get_node(".")
-	
-	
-	traction = get_node("Traction")
-	
+	pass
 func _physics_process(delta):
 	PlayerVars.lifecycle = lifecycle
 	
@@ -56,12 +60,16 @@ func _physics_process(delta):
 	velocity.x = hv.x 
 	velocity.z = hv.z
 	
-	
+	if(is_moving && is_on_floor()):
+		character_run()
+	if(!is_moving && can_jump):
+		character_idle()
 	# move charater
 	if traction.is_colliding():
 		velocity = move_and_slide_with_snap(velocity, traction.get_collision_normal(), Vector3(0,1,0), false, 4, 1)
 		gravity = -35
 	else:
+		
 		velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
 	#camera return
@@ -77,6 +85,7 @@ func _physics_process(delta):
 			SPEED = 14
 			return
 	else:
+		character_jump()
 		can_jump = false
 	if is_on_wall():
 		can_jump = false
@@ -104,7 +113,10 @@ func loop_controls():
 		facing_direction += camera.basis[0]
 		is_moving = true
 	if(Input.is_action_pressed("jump") && can_jump):
-			velocity.y = JUMP_HEIGHT
+		player_animation.play("jump")
+		velocity.y = JUMP_HEIGHT
+	if(Input.is_action_pressed("ui_accept") && can_jump):
+		character_attack()
 
 func _on_Coin_body_entered(body):
 	var name = body.get_name()
@@ -114,3 +126,33 @@ func _on_Coin_body_entered(body):
 		
 		return
 	pass # Replace with function body.
+
+func stop_all_sounds():
+	for sound in effects_sound:
+		effects_sound[sound].stop()
+
+func character_run():
+	if(player_animation.current_animation != "run"):
+		player_animation.play('run')
+		effect_run.emitting = true
+	if(!effects_sound.run.playing):
+		effects_sound.run.play()
+	if(effects_sound.jump.playing):
+		effects_sound.run.stop()
+func character_idle():
+	if(!effects_sound.attack.playing):
+		stop_all_sounds()
+	if(player_animation.current_animation != "attack"):
+		player_animation.play("idle")
+	effect_run.emitting = false		
+func character_jump():
+	effects_sound.run.stop()
+	if(!effects_sound.jump.playing && can_jump):
+		effects_sound.jump.play()
+	player_animation.play("jump")
+	player_animation.seek(0.5)
+	effect_run.emitting = false
+func character_attack():
+	player_animation.play("attack")
+	effects_sound.attack.play()
+	pass

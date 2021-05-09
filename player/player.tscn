@@ -1,14 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/player-graphic.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/camera.gd" type="Script" id=3]
 [ext_resource path="res://gui/hud/HUD.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CylinderMesh" id=3]
-radial_segments = 10
-rings = 2
-
 [sub_resource type="CapsuleShape" id=1]
+radius = 0.646894
+height = 3.57559
 
 [sub_resource type="BoxShape" id=2]
 
@@ -24,12 +23,10 @@ transform = Transform( 1, 0, 0, 0, 0.996172, -0.0874163, 0, 0.0874163, 0.996172,
 enabled = true
 cast_to = Vector3( 0, 1.6, -10 )
 
-[node name="CSGMesh" type="CSGMesh" parent="."]
-transform = Transform( 0.580592, 0, 0, 0, 0.948643, 0, 0, 0, 0.543231, 0, 0.245661, 0 )
-mesh = SubResource( 3 )
+[node name="character" parent="." instance=ExtResource( 2 )]
 
 [node name="player-colision" type="CollisionShape" parent="."]
-transform = Transform( 0.793549, 0, 0, 0, 0.948643, 0, 0, 0, 0.543231, 0, 0.245661, 0 )
+transform = Transform( 0.793549, 0, 0, 0, -4.14665e-08, 0.543231, 0, -0.948643, -2.37454e-08, 0, 1.27634, -4.50524e-08 )
 shape = SubResource( 1 )
 
 [node name="target" type="Spatial" parent="."]

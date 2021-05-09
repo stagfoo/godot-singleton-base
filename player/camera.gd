@@ -3,8 +3,8 @@ extends Camera
 # uses code from Jayanam
 # https://www.youtube.com/watch?v=kc-zJnRvPUY
 
-var distance = 10
-var height = 4
+export var distance = 10
+export var height = 4
 
 var player
 var lockon
