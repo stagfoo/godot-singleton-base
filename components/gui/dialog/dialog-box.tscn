@@ -1,13 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/smaller.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/Fredoka_One/FredokaOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://components/gui/dialog/dialog-box.gd" type="Script" id=3]
 
-[node name="Control" type="Control"]
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="dialog-box" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 1.0
 margin_right = 4.0
 margin_bottom = -427.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -36,3 +45,22 @@ meta_underlined = false
 tab_size = 0
 text = "Name of NPC"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body" type="RichTextLabel" parent="."]
+margin_left = 29.0
+margin_top = 61.0
+margin_right = 791.0
+margin_bottom = 137.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+meta_underlined = false
+tab_size = 0
+text = "example text"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

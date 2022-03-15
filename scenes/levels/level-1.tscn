@@ -4,8 +4,6 @@
 [ext_resource path="res://components/props/platform/platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://components/actors/npc/npc.tscn" type="PackedScene" id=3]
 
-
-
 [sub_resource type="Environment" id=1]
 background_mode = 1
 background_color = Color( 0.580392, 0.972549, 1, 1 )
@@ -28,5 +26,5 @@ transform = Transform( 1.94309, 0, 0, 0, 1, 0, 0, 0, 2.1524, 16.5486, 5.99719, 9
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18623, 0.431285 )
 JUMP_HEIGHT = 18
 
-[node name="player2" parent="." instance=ExtResource( 3 )]
+[node name="npc" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.0231417, 0, -1.19978, 0, 1.2, 0, 1.19978, 0, -0.0231417, 12.9668, 6.78896, 5.91001 )

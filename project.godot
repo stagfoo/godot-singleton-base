@@ -24,6 +24,7 @@ config/icon="res://logo.png"
 
 GLOBALS="*res://domain/globals.gd"
 PLAYER_STATE="*res://domain/player-state.gd"
+DIALOG="*res://domain/dialog.gd"
 
 [display]
 

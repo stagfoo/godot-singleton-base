@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/models/player/Material_001.material" type="Material" id=1]
 [ext_resource path="res://assets/texture/baseman.png" type="Texture" id=2]
 [ext_resource path="res://components/actors/npc/npc.gd" type="Script" id=3]
-
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube"
@@ -99,7 +98,7 @@ bind/24/name = "foot_r"
 bind/24/bone = -1
 bind/24/pose = Transform( 0.92657, -1.85623e-08, 4.40568e-07, 1.42952e-08, -0.925731, -0.0394096, 3.00366e-07, 0.03941, -0.925733, 0.257137, 0.291652, -0.00268014 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=3]
 flags_unshaded = true
 flags_do_not_receive_shadows = true
 params_cull_mode = 2
@@ -108,8 +107,7 @@ albedo_color = Color( 0.654902, 0.0980392, 1, 1 )
 albedo_texture = ExtResource( 2 )
 uv1_triplanar_sharpness = 1.36604
 
-[sub_resource type="Animation" id=3]
-resource_name = "attack"
+[sub_resource type="Animation" id=4]
 length = 0.458333
 tracks/0/type = "transform"
 tracks/0/path = NodePath("metarig/Skeleton:spine_6")
@@ -287,8 +285,7 @@ tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = PoolRealArray( 0, 1, 0, -0.0704417, 0.01816, 0, 0, 0, 1, 1, 1, 1, 0.458333, 1, 0, -0.0704417, 0.01816, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "death"
+[sub_resource type="Animation" id=5]
 length = 0.291667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("metarig/Skeleton:spine_6")
@@ -466,8 +463,7 @@ tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = PoolRealArray( 0, 1, 0, -0.0704417, 0.01816, 0, 0, 0, 1, 1, 1, 1, 0.0666667, 1, 0, -0.171032, 0.0440924, -0.117237, 0, 0, 0.993104, 1, 1, 1, 0.133333, 1, 5.12852e-24, -0.582975, 0.150292, -0.588111, -7.88747e-18, -3.05951e-17, 0.80878, 1, 1, 1, 0.2, 1, 2.56426e-23, -0.717096, 0.184869, -0.707107, -3.91957e-17, -1.52038e-16, 0.707107, 1, 1, 1, 0.291667, 1, 2.56426e-23, -0.717096, 0.184869, -0.707107, -3.91957e-17, -1.52038e-16, 0.707107, 1, 1, 1 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "idle"
+[sub_resource type="Animation" id=6]
 length = 0.625
 loop = true
 tracks/0/type = "transform"
@@ -646,8 +642,7 @@ tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = PoolRealArray( 0, 1, 0, -0.0704417, 0.01816, 0, 0, 0, 1, 1, 1, 1, 0.625, 1, 0, -0.0704417, 0.01816, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=6]
-resource_name = "jump"
+[sub_resource type="Animation" id=7]
 length = 0.625
 tracks/0/type = "transform"
 tracks/0/path = NodePath("metarig/Skeleton:spine_6")
@@ -825,8 +820,7 @@ tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = PoolRealArray( 0, 1, 0, -0.0704417, 0.01816, 0, 0, 0, 1, 1, 1, 1, 0.0666667, 1, 0, -0.109535, 0.0282384, 0, 0, 0, 1, 1, 1, 1, 0.133333, 1, 0, -0.269632, 0.0695117, -7.45058e-09, 0, 0, 1, 1, 1, 1, 0.2, 1, 0, -0.321757, 0.0829495, 0, 0, 0, 1, 1, 1, 1, 0.333333, 1, 0, -0.321757, 0.0829495, 0, 0, 0, 1, 1, 1, 1, 0.4, 1, 0, 0.198134, -0.0510794, 0, 0, 0, 1, 1, 1, 1, 0.466667, 1, 0, 0.577514, -0.148884, 0, 0, 0, 1, 1, 1, 1, 0.533333, 1, 0, 0.0154697, -0.00398812, 0, 0, 0, 1, 1, 1, 1, 0.6, 1, 0, -0.22123, 0.0570336, 0, 0, 0, 1, 1, 1, 1, 0.625, 1, 0, -0.0704417, 0.01816, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "run"
+[sub_resource type="Animation" id=8]
 length = 0.5
 tracks/0/type = "transform"
 tracks/0/path = NodePath("metarig/Skeleton:spine_6")
@@ -1004,6 +998,9 @@ tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = PoolRealArray( 0, 1, 0, 0, 2.98023e-08, 0, 0, 0, 1, 1, 1, 1, 0.0666667, 1, 0, -0.0449065, 0.011577, 0, 0, 0, 1, 1, 1, 1, 0.133333, 1, 0, -0.144971, 0.0373737, -7.45058e-09, 0, 0, 1, 1, 1, 1, 0.2, 1, 0, -0.0910523, 0.0234734, 0, 0, 0, 1, 1, 1, 1, 0.266667, 1, 0, -0.068137, 0.0175658, -7.45058e-09, 0, 0, 1, 1, 1, 1, 0.333333, 1, 0, -0.126099, 0.0325086, 0, 0, 0, 1, 1, 1, 1, 0.4, 1, 0, -0.126404, 0.0325871, 0, 0, 0, 1, 1, 1, 1, 0.466667, 1, 0, -0.0310465, 0.00800386, 0, 0, 0, 1, 1, 1, 1, 0.5, 1, 0, 0, 2.98023e-08, 0, 0, 0, 1, 1, 1, 1 )
 
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1.63193, 1.47391, 1.92377 )
+
 [node name="player" type="Spatial"]
 script = ExtResource( 3 )
 
@@ -1138,16 +1135,24 @@ bones/24/enabled = true
 bones/24/bound_children = [  ]
 
 [node name="Cube" type="MeshInstance" parent="metarig/Skeleton"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 1 )
 skin = SubResource( 2 )
-material/0 = SubResource( 8 )
+material/0 = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_process_mode = 0
 method_call_mode = 1
-anims/attack = SubResource( 3 )
-anims/death = SubResource( 4 )
-anims/idle = SubResource( 5 )
-anims/jump = SubResource( 6 )
-anims/run = SubResource( 7 )
+anims/attack = SubResource( 4 )
+anims/death = SubResource( 5 )
+anims/idle = SubResource( 6 )
+anims/jump = SubResource( 7 )
+anims/run = SubResource( 8 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.46479, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74828, 0 )
+shape = SubResource( 9 )
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
+[connection signal="body_shape_entered" from="Area" to="." method="_on_Area_body_shape_entered"]

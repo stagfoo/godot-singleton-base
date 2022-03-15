@@ -115,23 +115,19 @@ func loop_controls():
 	if(Input.is_action_pressed("jump") && can_jump):
 		player_animation.play("jump")
 		velocity.y = JUMP_HEIGHT
-	if(Input.is_action_pressed("ui_accept") && can_jump):
+	if(Input.is_action_pressed("ui_accept") && can_jump && !PLAYER_STATE.hasInteraction):
 		character_attack()
+	if(Input.is_action_pressed("ui_accept") && PLAYER_STATE.hasInteraction):
+			character_interact()
 
-func _on_Coin_body_entered(body):
-	var name = body.get_name()
-	print("from player")
-	print(name)
-	if(name == 'player'):
-		
-		return
-	pass # Replace with function body.
 
 func stop_all_sounds():
 	for sound in effects_sound:
 		effects_sound[sound].stop()
 
 func character_run():
+	PLAYER_STATE.isTalking = false;
+	PLAYER_STATE.hasInteraction = false;
 	if(player_animation.current_animation != "run"):
 		player_animation.play('run')
 		effect_run.emitting = true
@@ -156,3 +152,8 @@ func character_attack():
 	player_animation.play("attack")
 	effects_sound.attack.play()
 	pass
+
+func character_interact():
+	PLAYER_STATE.isTalking = true
+
+	
