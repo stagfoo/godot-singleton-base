@@ -16,15 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="base"
-run/main_scene="res://gui/menu/menu.tscn"
-boot_splash/image="res://splash.png"
+run/main_scene="res://domain/root.tscn"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
-config/icon="res://icon.png"
 
 [autoload]
 
-_Globals="*res://scripts/Globals.gd"
-PlayerVars="*res://scripts/PlayerVars.gd"
+GLOBALS="*res://domain/globals.gd"
+PLAYER_STATE="*res://domain/player-state.gd"
 
 [display]
 
@@ -103,7 +101,3 @@ start={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"unicode":0,"echo":false,"script":null)
  ]
 }
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

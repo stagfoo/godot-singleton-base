@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/fonts/smaller.tres" type="DynamicFont" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_right = 4.0
+margin_bottom = -427.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="."]
+margin_left = 2.86053
+margin_top = -0.383972
+margin_right = 830.861
+margin_bottom = 154.616
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next-indicator" type="Sprite" parent="."]
+
+[node name="character-name" type="RichTextLabel" parent="."]
+margin_left = 28.8605
+margin_top = 21.616
+margin_right = 329.861
+margin_bottom = 59.616
+rect_clip_content = false
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+meta_underlined = false
+tab_size = 0
+text = "Name of NPC"
+scroll_active = false

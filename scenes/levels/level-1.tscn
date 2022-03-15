@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://components/actors/player/root.tscn" type="PackedScene" id=1]
+[ext_resource path="res://components/props/platform/platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://components/actors/npc/npc.tscn" type="PackedScene" id=3]
+
+
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 0.580392, 0.972549, 1, 1 )
+ambient_light_color = Color( 1, 0.960784, 0.701961, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="platform" parent="." instance=ExtResource( 2 )]
+
+[node name="platform2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.94309, 0, 0, 0, 1, 0, 0, 0, 2.1524, 2.76688, 1.80158, 16.3834 )
+
+[node name="platform3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.94309, 0, 0, 0, 1, 0, 0, 0, 2.1524, 16.5486, 5.99719, 9.7295 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18623, 0.431285 )
+JUMP_HEIGHT = 18
+
+[node name="player2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.0231417, 0, -1.19978, 0, 1.2, 0, 1.19978, 0, -0.0231417, 12.9668, 6.78896, 5.91001 )
