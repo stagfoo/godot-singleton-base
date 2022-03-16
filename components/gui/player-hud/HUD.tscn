@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://components/gui/player-hud/HUD.gd" type="Script" id=1]
+[ext_resource path="res://components/gui/dialog/dialog-box.tscn" type="PackedScene" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Fredoka_One/FredokaOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = SubResource( 1 )
+
+[node name="HUD" type="TextureRect"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coins" type="RichTextLabel" parent="."]
+margin_left = 17.7865
+margin_top = 10.8697
+margin_right = 134.787
+margin_bottom = 80.8697
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/normal_font = SubResource( 2 )
+tab_size = 1
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialog-box" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = 33.0754
+margin_top = 430.31
+margin_right = 37.0754
+margin_bottom = 2.30975
