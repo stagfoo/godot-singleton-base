@@ -18,7 +18,7 @@ func _ready():
 
 func _physics_process(delta):
 	if(Input.is_action_just_released("ui_accept") && playerInRange):
-		DialogueManager.show_example_dialogue_balloon('NPC', resource)
+		DIALOG.show_dialogue_balloon('NPC', resource)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
