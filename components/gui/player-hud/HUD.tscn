@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://components/gui/player-hud/HUD.gd" type="Script" id=1]
-[ext_resource path="res://components/gui/dialog/dialog-box.tscn" type="PackedScene" id=2]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/Fredoka_One/FredokaOne-Regular.ttf"
@@ -31,10 +30,3 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="dialog-box" parent="." instance=ExtResource( 2 )]
-visible = false
-margin_left = 33.0754
-margin_top = 430.31
-margin_right = 37.0754
-margin_bottom = 2.30975

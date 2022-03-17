@@ -4,7 +4,6 @@
 [ext_resource path="res://logo.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/bigger.tres" type="DynamicFont" id=3]
 
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.886275, 0.439216, 1 )
 
@@ -26,8 +25,8 @@ margin_left = 645.0
 margin_top = 189.0
 margin_right = 935.0
 margin_bottom = 275.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
 action_mode = 0
 text = "start"
 flat = true
@@ -40,8 +39,8 @@ margin_left = 644.0
 margin_top = 312.0
 margin_right = 933.0
 margin_bottom = 389.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
 action_mode = 0
 text = "quit"
 flat = true
@@ -53,5 +52,6 @@ __meta__ = {
 position = Vector2( 327.062, 283.634 )
 scale = Vector2( 0.566842, 0.566842 )
 texture = ExtResource( 2 )
+
 [connection signal="pressed" from="ItemList/Start Game" to="ItemList" method="_on_Button_pressed"]
 [connection signal="pressed" from="ItemList/End Game" to="ItemList" method="_on_Button_pressed"]

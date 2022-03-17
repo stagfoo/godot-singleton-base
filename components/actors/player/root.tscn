@@ -5,8 +5,6 @@
 [ext_resource path="res://components/actors/player/player.gd" type="Script" id=3]
 [ext_resource path="res://components/gui/player-hud/HUD.tscn" type="PackedScene" id=4]
 
-
-
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.646894
 height = 3.57559

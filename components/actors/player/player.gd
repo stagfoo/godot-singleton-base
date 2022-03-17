@@ -115,10 +115,8 @@ func loop_controls():
 	if(Input.is_action_pressed("jump") && can_jump):
 		player_animation.play("jump")
 		velocity.y = JUMP_HEIGHT
-	if(Input.is_action_pressed("ui_accept") && can_jump && !PLAYER_STATE.hasInteraction):
+	if(Input.is_action_pressed("ui_accept") && can_jump):
 		character_attack()
-	if(Input.is_action_pressed("ui_accept") && PLAYER_STATE.hasInteraction):
-			character_interact()
 
 
 func stop_all_sounds():

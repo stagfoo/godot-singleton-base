@@ -1,0 +1,45 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+syntax_version = 2
+raw_text = "~ NPC
+
+NPC: This is some dialogue.
+- End the conversation => END"
+errors = [  ]
+titles = {
+"NPC": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "NPC",
+"type": "title"
+},
+"2": {
+"character": "NPC",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "3",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "This is some dialogue.",
+"time": null,
+"translation_key": "This is some dialogue.",
+"type": "dialogue"
+},
+"3": {
+"next_id": "end",
+"next_id_after": "end",
+"replacements": [  ],
+"responses": PoolStringArray( "3" ),
+"text": "End the conversation",
+"translation_key": "End the conversation",
+"type": "response"
+}
+}

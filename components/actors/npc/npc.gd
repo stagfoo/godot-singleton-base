@@ -2,7 +2,9 @@ extends Spatial
 
 export var actorName = "NPC"
 export var actorKey = "npc"
-
+onready var resource = preload("res://assets/dialog/npc.tres")
+var playerInRange = false;
+var isTalking = false;
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -11,17 +13,23 @@ export var actorKey = "npc"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("AnimationPlayer").play("idle");
+
+	pass # Replace with function body.
+
+func _physics_process(delta):
+	if(Input.is_action_just_released("ui_accept") && playerInRange):
+		DialogueManager.show_example_dialogue_balloon('NPC', resource)
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
+
+func _on_Area_body_entered(body):
+	playerInRange = true
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Area_body_shape_entered(body_id, body, body_shape, area_shape):
-	PLAYER_STATE.hasInteraction = true
-	if(PLAYER_STATE.isTalking):
-		PLAYER_STATE.currentSpeaker.name = actorName
-		PLAYER_STATE.currentSpeaker.key = actorKey
+func _on_Area_body_exited(body):
+	playerInRange = false
 	pass # Replace with function body.
